@@ -5,7 +5,9 @@
 #include <string.h>
 #include <sys/socket.h>
 #include <unistd.h>
+
 #define PORT 7117
+
 
 int main(int argc, char const* argv[])
 {
@@ -57,7 +59,7 @@ int main(int argc, char const* argv[])
 
     valread = recv(client_fd, buffer, sizeof(buffer), 0);
 
-    printf("RESPONSE: %s\n", buffer);
+    printf("RESPONSE: %s\n\n", buffer);
 
     if ((client_cmd[0] != 37) && (client_cmd[1] != 113)) {
         // (clears the input buffer)

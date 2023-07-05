@@ -6,7 +6,9 @@
 #include <string.h>
 #include <sys/socket.h>
 #include <unistd.h>
+
 #define PORT 7117
+
 int main(int argc, char const* argv[]) {
     int server_fd, conn_socket, valread;
     struct sockaddr_in address;
@@ -63,7 +65,7 @@ int main(int argc, char const* argv[]) {
 
     send(conn_socket, serv_resp, strlen(serv_resp), 0);
 
-    printf("RESP: %c\n", *serv_resp);
+    printf("RESP: %s\n", serv_resp);
 
 
     if ((buffer[0] != 37) && (buffer[1] != 113)) {
